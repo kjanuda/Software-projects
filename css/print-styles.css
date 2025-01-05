@@ -1,0 +1,15 @@
+nav,
+header,
+footer {
+    display: none;
+}
+
+.w3-display-container {
+    width: unset;
+}
+
+#customer-commumication,
+#services {
+    padding-left: unset;
+    padding-right: unset;
+}

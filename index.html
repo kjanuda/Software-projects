@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Software Projects</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Quicksand">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="css/w3.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/print-styles.css" media="print">
+    <link rel="shortcut icon" href="img/spicon.ico" type="image/x-icon" />
+    <meta name="theme-color" content="#EE8C00" />
+    <style>
+        body {
+            font-family: 'Quicksand', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            overflow-x: hidden;
+        }
+
+        header {
+            width: 100%;
+            height: 80vh;
+            background-image: url('../img/hr2.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            font-weight: 600;
+            letter-spacing: 2px;
+            animation: fadeIn 2s ease-out;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        nav {
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 10px 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: background-color 0.3s ease;
+        }
+
+        nav:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        nav .menu {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav .menu li a {
+            text-decoration: none;
+            color: white;
+            padding: 16px 25px;
+            display: block;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            font-size: 18px;
+            font-weight: 500;
+        }
+
+        nav .menu li a:hover {
+            background-color: #EE8C00;
+            color: black;
+        }
+
+        header h1 {
+            font-size: 4em;
+            margin: 0;
+            animation: slideInFromTop 1s ease-out;
+        }
+
+        header p {
+            font-size: 1.5em;
+            margin-top: 10px;
+            animation: slideInFromTop 1.5s ease-out;
+        }
+
+        @keyframes slideInFromTop {
+            0% {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .scroll-down {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 24px;
+            color: white;
+            cursor: pointer;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translate(-50%, 0);
+            }
+
+            50% {
+                transform: translate(-50%, -10px);
+            }
+        }
+
+        #main-content {
+            padding: 50px 20px;
+        }
+
+        section {
+            padding: 40px 20px;
+            margin-bottom: 40px;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            transition: box-shadow 0.3s ease;
+            animation: fadeIn 1.5s ease-out;
+        }
+
+        section:hover {
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        section h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        section p {
+            font-size: 1.2em;
+            color: #555;
+        }
+
+        footer {
+            background-color: #222;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            animation: fadeIn 2s ease-out;
+        }
+
+        footer .social-icons a {
+            color: white;
+            margin: 0 10px;
+            font-size: 24px;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        footer .social-icons a:hover {
+            color: #EE8C00;
+        }
+
+        .service-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .service-list li {
+            margin-bottom: 20px;
+            font-size: 1.2em;
+            color: #333;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 3em;
+            }
+
+            nav .menu {
+                flex-direction: column;
+            }
+
+            nav .menu li a {
+                padding: 12px 20px;
+            }
+
+            section h1 {
+                font-size: 2em;
+            }
+
+            .social-icons a {
+                font-size: 20px;
+            }
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1em;
+            transition: border-color 0.3s ease;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            border-color: #EE8C00;
+        }
+
+        .contact-form button {
+            background-color: #EE8C00;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .contact-form button:hover {
+            background-color: #d87d00;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <ul class="menu">
+            <li><a href="#services">Services</a></li>
+            <li><a href="#customer-communication">Customer Communication</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <header id="home">
+        <h1>Software Projects</h1>
+        <p>Skilled developers delivering critical solutions for your business.</p>
+        <div class="scroll-down" onclick="scrollToSection('services')">&#x2193;</div>
+    </header>
+
+    <div id="main-content">
+        <section id="services">
+            <h1>Our Services</h1>
+            <ul class="service-list">
+                <li><strong>Custom Software Development</strong><br>Software Projects have developed software solutions for clients in a wide range of industries: health and fitness, medical, insurance, superannuation, tourism, and telecommunications.</li>
+                <li><strong>Cloud Enablement</strong><br>Software Projects have assisted their clients in migrating significant portions of their IT infrastructure to AWS. We help our clients with ongoing support of their cloud-based assets.</li>
+                <li><strong>Software Practice Review and Consulting</strong><br>We offer consulting services to improve your current software practices, leveraging our diverse experience across projects of varied scope and complexity.</li>
+                <li><strong>Review Current Infrastructure</strong><br>Years of software development experience across many platforms make us suitable to review your hardware and software infrastructure. Our consulting services include security audits, performance audits, and efficiency reviews.</li>
+                <li><strong>Systems Integration</strong><br>We have a history of integrating systems across platforms, including robotics interface development, web scraping tools, and workflow-centered web applications.</li>
+            </ul>
+        </section>
+
+        <section id="customer-communication">
+            <h1>Customer Communication</h1>
+            <p>We support and sell the document generation software, Scriptura Engage, in Australia. Scriptura Engage automates document production and delivery across various channels, ensuring timely, personalized communication.</p>
+            <p>We offer services to integrate Scriptura Engage into your existing document generation workflow processes, including document conversion and system integration.</p>
+        </section>
+
+        <section id="contact">
+            <h1>Contact Us</h1>
+            <p>Email: <a href="mailto:janudakodi@gmail.com">janudakodi@gmail.com</a></p>
+            <p>Phone: +94 77 300 7426</p>
+            <div class="social-icons">
+                <a href="https://linkedin.com/in/januda-kodithuwakku" target="_blank"><i class="fa fa-linkedin"></i></a>
+                <a href="https://kjanuda.github.io/JanudaJK.me/" target="_blank"><i class="fa fa-globe"></i></a>
+                <a href="https://medium.com/@janudakodi" target="_blank"><i class="fa fa-medium"></i></a>
+            </div>
+            <form class="contact-form" method="POST">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; Januda J Kodithuwakku 2024. All rights reserved.</p>
+        <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Use</a></p>
+    </footer>
+
+    <script>
+        function scrollToSection(sectionId) {
+            document.getElementById(sectionId).scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+    </script>
+</body>
+
+</html>
