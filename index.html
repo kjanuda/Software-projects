@@ -11,304 +11,224 @@
     <link rel="stylesheet" href="css/print-styles.css" media="print">
     <link rel="shortcut icon" href="img/spicon.ico" type="image/x-icon" />
     <meta name="theme-color" content="#EE8C00" />
-    <style>
-        body {
-            font-family: 'Quicksand', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            overflow-x: hidden;
-        }
-
-        header {
-            width: 100%;
-            height: 80vh;
-            background-image: url('../img/hr2.jpg');
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-attachment: fixed;
-            color: white;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            font-weight: 600;
-            letter-spacing: 2px;
-            animation: fadeIn 2s ease-out;
-        }
-
-        @keyframes fadeIn {
-            0% {
-                opacity: 0;
-            }
-
-            100% {
-                opacity: 1;
-            }
-        }
-
-        nav {
-            background-color: rgba(0, 0, 0, 0.6);
-            padding: 10px 0;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            transition: background-color 0.3s ease;
-        }
-
-        nav:hover {
-            background-color: rgba(0, 0, 0, 0.8);
-        }
-
-        nav .menu {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-        }
-
-        nav .menu li a {
-            text-decoration: none;
-            color: white;
-            padding: 16px 25px;
-            display: block;
-            transition: background-color 0.3s ease, color 0.3s ease;
-            font-size: 18px;
-            font-weight: 500;
-        }
-
-        nav .menu li a:hover {
-            background-color: #EE8C00;
-            color: black;
-        }
-
-        header h1 {
-            font-size: 4em;
-            margin: 0;
-            animation: slideInFromTop 1s ease-out;
-        }
-
-        header p {
-            font-size: 1.5em;
-            margin-top: 10px;
-            animation: slideInFromTop 1.5s ease-out;
-        }
-
-        @keyframes slideInFromTop {
-            0% {
-                opacity: 0;
-                transform: translateY(-50px);
-            }
-
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .scroll-down {
-            position: absolute;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            font-size: 24px;
-            color: white;
-            cursor: pointer;
-            animation: bounce 2s infinite;
-        }
-
-        @keyframes bounce {
-            0%, 100% {
-                transform: translate(-50%, 0);
-            }
-
-            50% {
-                transform: translate(-50%, -10px);
-            }
-        }
-
-        #main-content {
-            padding: 50px 20px;
-        }
-
-        section {
-            padding: 40px 20px;
-            margin-bottom: 40px;
-            background-color: white;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-            transition: box-shadow 0.3s ease;
-            animation: fadeIn 1.5s ease-out;
-        }
-
-        section:hover {
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-        }
-
-        section h1 {
-            font-size: 2.5em;
-            margin-bottom: 20px;
-            color: #333;
-        }
-
-        section p {
-            font-size: 1.2em;
-            color: #555;
-        }
-
-        footer {
-            background-color: #222;
-            color: white;
-            padding: 20px 0;
-            text-align: center;
-            animation: fadeIn 2s ease-out;
-        }
-
-        footer .social-icons a {
-            color: white;
-            margin: 0 10px;
-            font-size: 24px;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        footer .social-icons a:hover {
-            color: #EE8C00;
-        }
-
-        .service-list {
-            list-style-type: none;
-            padding-left: 0;
-        }
-
-        .service-list li {
-            margin-bottom: 20px;
-            font-size: 1.2em;
-            color: #333;
-        }
-
-        @media (max-width: 768px) {
-            header h1 {
-                font-size: 3em;
-            }
-
-            nav .menu {
-                flex-direction: column;
-            }
-
-            nav .menu li a {
-                padding: 12px 20px;
-            }
-
-            section h1 {
-                font-size: 2em;
-            }
-
-            .social-icons a {
-                font-size: 20px;
-            }
-        }
-
-        .contact-form input,
-        .contact-form textarea {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            font-size: 1em;
-            transition: border-color 0.3s ease;
-        }
-
-        .contact-form input:focus,
-        .contact-form textarea:focus {
-            border-color: #EE8C00;
-        }
-
-        .contact-form button {
-            background-color: #EE8C00;
-            color: white;
-            padding: 12px 20px;
-            border: none;
-            border-radius: 5px;
-            font-size: 1.2em;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        .contact-form button:hover {
-            background-color: #d87d00;
-        }
-    </style>
 </head>
 
 <body>
-    <nav>
+    <nav class="w3-bar w3-large">
+        <div class="brand w3-button">
+            <span class="s">Software</span> <span class="p">Projects</span>
+        </div>
         <ul class="menu">
-            <li><a href="#services">Services</a></li>
-            <li><a href="#customer-communication">Customer Communication</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li class="w3-hide-small"><a href="#services" class="w3-button w3-bar-item">Services</a></li>
+            <li class="w3-hide-small"><a href="#customer-commumication" class="w3-button w3-bar-item">Customer Communication</a></li>
+            <li class="w3-hide-small"><a href="#contact" class="w3-button w3-bar-item">Contact</a></li>
+            <li class="w3-right w3-hide-large w3-hide-medium" id="hamburger"><a href="javascript:void(0)" onclick="toggleHamburger()">&#9776;</a></li>
         </ul>
     </nav>
 
-    <header id="home">
-        <h1>Software Projects</h1>
-        <p>Skilled developers delivering critical solutions for your business.</p>
-        <div class="scroll-down" onclick="scrollToSection('services')">&#x2193;</div>
-    </header>
-
-    <div id="main-content">
-        <section id="services">
-            <h1>Our Services</h1>
-            <ul class="service-list">
-                <li><strong>Custom Software Development</strong><br>Software Projects have developed software solutions for clients in a wide range of industries: health and fitness, medical, insurance, superannuation, tourism, and telecommunications.</li>
-                <li><strong>Cloud Enablement</strong><br>Software Projects have assisted their clients in migrating significant portions of their IT infrastructure to AWS. We help our clients with ongoing support of their cloud-based assets.</li>
-                <li><strong>Software Practice Review and Consulting</strong><br>We offer consulting services to improve your current software practices, leveraging our diverse experience across projects of varied scope and complexity.</li>
-                <li><strong>Review Current Infrastructure</strong><br>Years of software development experience across many platforms make us suitable to review your hardware and software infrastructure. Our consulting services include security audits, performance audits, and efficiency reviews.</li>
-                <li><strong>Systems Integration</strong><br>We have a history of integrating systems across platforms, including robotics interface development, web scraping tools, and workflow-centered web applications.</li>
-            </ul>
-        </section>
-
-        <section id="customer-communication">
-            <h1>Customer Communication</h1>
-            <p>We support and sell the document generation software, Scriptura Engage, in Australia. Scriptura Engage automates document production and delivery across various channels, ensuring timely, personalized communication.</p>
-            <p>We offer services to integrate Scriptura Engage into your existing document generation workflow processes, including document conversion and system integration.</p>
-        </section>
-
-        <section id="contact">
-            <h1>Contact Us</h1>
-            <p>Email: <a href="mailto:janudakodi@gmail.com">janudakodi@gmail.com</a></p>
-            <p>Phone: +94 77 300 7426</p>
-            <div class="social-icons">
-                <a href="https://linkedin.com/in/januda-kodithuwakku" target="_blank"><i class="fa fa-linkedin"></i></a>
-                <a href="https://kjanuda.github.io/JanudaJK.me/" target="_blank"><i class="fa fa-globe"></i></a>
-                <a href="https://medium.com/@janudakodi" target="_blank"><i class="fa fa-medium"></i></a>
-            </div>
-            <form class="contact-form" method="POST">
-                <input type="text" name="name" placeholder="Your Name" required>
-                <input type="email" name="email" placeholder="Your Email" required>
-                <textarea name="message" placeholder="Your Message" required></textarea>
-                <button type="submit">Send Message</button>
-            </form>
-        </section>
-    </div>
-
-    <footer>
-        <p>&copy; Januda J Kodithuwakku 2024. All rights reserved.</p>
-        <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Use</a></p>
-    </footer>
-
+    <nav id="mNav" class="w3-bar-block w3-hide w3-hide-large w3-hide-medium">
+        <ul class="mobile menu">
+            <li class="w3-bar-item w3-button"><a href="#services" onclick="toggleHamburger()">Services</a></li>
+            <li class="w3-bar-item w3-button"><a href="#customer-commumication" onclick="toggleHamburger()">Customer Communication</a></li>
+            <li class="w3-bar-item w3-button"><a href="#contact" onclick="toggleHamburger()">Contact</a></li>
+        </ul>
+    </nav>
     <script>
-        function scrollToSection(sectionId) {
-            document.getElementById(sectionId).scrollIntoView({
-                behavior: 'smooth'
-            });
+        function toggleHamburger() {
+            var x = document.getElementById("mNav");
+            if (x.className.indexOf("w3-show") == -1) {
+                x.className += " w3-show";
+            } else {
+                x.className = x.className.replace(" w3-show", "");
+            }
         }
     </script>
+    <header class="w3-display-container">
+        <div class="w3-display-middle w3-margin-top w3-center" id="home">
+            <h1 class="w3-xxlarge w3-text-white w3-wide"><span class="w3-text-light-grey">Software Projects</span></h1>
+            <p>We are skilled software developers and consultants. We develop highly available systems, whose operation is critical to the success of our clients' businesses.</p>
+        </div>
+        <div class="w3-display-bottomleft w3-small w3-text-grey">Photo: <a href="https://www.acarrick.com">Anthony Carrick</a></div>
+    </header>
+    <div class="w3-content">
+        <section id="services">
+            <h1>Services</h1>
+            <div class="sub-section">
+                <h2><i class="fa fa-code" aria-hidden="true"></i> Custom Software Development</h2>
+                <p>Software Projects have developed software solutions for clients in a wide range of industries: health and fitness, medical, insurance, superannuation, tourism and telecommunications.</p>
+            </div>
+            <div class="sub-section">
+                <h2><i class="fa fa-cloud" aria-hidden="true"></i> Cloud Enablement</h2>
+                <p>Software Projects have assisted their clients in migrating significant portions of their IT infrastructure to AWS. We help our clients with ongoing support of their cloud-based assets.</p>
+            </div>
+            <div class="sub-section">
+                <h2><i class="fa fa-superpowers" aria-hidden="true"></i> Software Practice Review and Consulting</h2>
+                <p>Our diverse experience across projects of varied scope and complexity gives us the knowledge and experience to help improve your current software practices.</p>
+                <p></p>
+            </div>
+            <div class="sub-section">
+                <h2><i class="fa fa-industry" aria-hidden="true"></i> Review Current Infrastructure</h2>
+                <p>Years of software development experience across many hardware and software platforms makes us suitable to review your current hardware and software infrastructure. Areas where we have provided consulting services in the past include:</p>
+                <ul>
+                    <li>Preparation for an impending upgrade</li>
+                    <li>Security and performance audits</li>
+                    <li>Efficiency and economic value reviews</li>
+                    <li>Due diligence</li>
+                </ul>
+                <p>We are well-versed in industry leading technologies such as:</p>
+                <ul>
+                    <li>Amazon Web Services</li>
+                    <li>Windows environments</li>
+                    <li>Linux environments</li>
+                    <li>Web technologies</li>
+                </ul>
+            </div>
+            <div class="sub-section">
+                <h2><i class="fa fa-microchip" aria-hidden="true"></i> Systems Integration</h2>
+                <p>We have a history of integrating systems across a number of platforms and devices &mdash; such as client to server communications and mobile platform integration with backend server infrastructure. Some of our interesting Systems Integration
+                    work includes:</p>
+                <ul>
+                    <li>Robotics interface development &mdash; a few projects we've been a part of involved the control of automated packing and picking robotics technologies.</li>
+                    <li>Web scraping &mdash; we have built tools to automate web scraping, data processing and presentation, and can custom-build a solution for your specific needs.</li>
+                    <li>Workflow centred web-applications &mdash; our web applications are built to support your existing business practises, while improving operational efficiency through the user-interface.</li>
+                </ul>
+            </div>
+        </section>
+        <section id="customer-commumication">
+            <h1>Customer Communication </h1>
+            <p>We support and sell the document generation software, Scriptura Engage, in Australia.</p>
+            <p>Software Projects are <i>Platinum Partners</i> of <a href="https://www.inventivedesigners.com/">Inventive Designers</a>, the developers of Scriptura Engage. We have a mini-site discussing some of the benefits of <a href="https://www.scriptura.com.au/">Scriptura Engage</a>.</p>
+            <div style="display:block; margin: auto; text-align: center;">
+                <a href="https://www.scriptura.com.au"><img src="img/scriptura_hero.jpg" alt="Visit our Scriptura Engage Website">
+                    <p>Visit Our Scriptura Engage Mini-Site.</p>
+                </a>
+            </div>
+            <p><strong>Scriptura Engage</strong> is an enterprise class document generation solution, which allows you to graphically design and control the entire document flow of your business, from composition and personalization to production and delivery.
+                It gets your customers the right information in the right channel at the right moment.</p>
+            <p>Scriptura is an industry leader in the automated production of customer communication, providing an easy to use document editor and server management interface. The software can generate many hundreds of documents per minute complete with
+                charts, graphics, dynamic styles, run-time calculations and more. Documents can be generated in many formats such as PDF/PS, HTML, vector and raster images; all with their delivery managed through a variety of channels including traditional
+                print, email and social media.</p>
+            <p>We are experienced in the integration of Scriptura into your existing document generation workflow processes and conversion of your existing documents.</p>
+        </section>
+        <section id="contact">
+            <h1>Contact Us</h1>
+            <div class="w3-row">
+                <div class="w3-container contact" style="width: 500px; margin-left: auto; margin-right: auto;">
+                    <div class="vcard contact-row">
+                        <div class="contact-cell">
+                            <h3>Company</h3>
+                        </div>
+                        <div class="contact-cell"><span class="fn n org">Software Projects Pty Ltd</span></div>
+                    </div>
+                    <div class="contact-row">
+                        <div class="contact-cell">
+                            <h3>Address</h3>
+                        </div>
+                        <div class="contact-cell adr">
+                            <div class="street-address">Level 1, Hakamana road</div>
+                            <span class="locality">Kambussawla</span>
+                            <span class="region">QLD</span>
+                            <span class="postal-code">4000</span>
+                            <div class="country-name">Beliatta</div>
+                        </div>
+                    </div>
+
+                    <div class="contact-row">
+                        <div class="contact-cell">
+                            <h3>Telephone</h3>
+                        </div>
+                        <div class="contact-cell">
+                            <div class="tel">+97713007426</div>
+                        </div>
+                    </div>
+                    <div class="contact-row">
+                        <div class="contact-cell">
+                            <h3>Email</h3>
+                        </div>
+                        <div class="contact-cell">
+                            <div class="email">info@sp.com.au</div>
+                        </div>
+                    </div>
+                    <div class="contact-row">
+                        <div class="contact-cell">
+                            <h3>Your Profile</h3>
+                        </div>
+                        <div class="contact-cell">
+                            <div class="email">linkedin.com/in/januda-kodithuwakku</div>
+                        </div>
+                    </div>
+                    <div class="contact-row">
+                        <div class="contact-cell">
+                            <h3>Websites</h3>
+                        </div>
+                        <div class="contact-cell">
+                            <div class="email"><a href="http://janudakk.byethost8.com/">janudakk.byethost8.com (Portfolio)</a></div>
+                            <div class="email"><a href="http://kjanuda.github.io/JanudaJK.me/">kjanuda.github.io/JanudaJK.me (Portfolio)</a></div>
+                            <div class="email"><a href="https://medium.com/@janudakodi">medium.com/@janudakodi (Personal)</a></div>
+                        </div>
+                    </div>
+                    <div class="contact-row">
+                        <div class="contact-cell">
+                            <h3>Phone</h3>
+                        </div>
+                        <div class="contact-cell">
+                            <div class="tel">+94 77 300 74 26 (Mobile)</div>
+                        </div>
+                    </div>
+                    <div class="contact-row">
+                        <div class="contact-cell">
+                            <h3>IM</h3>
+                        </div>
+                        <div class="contact-cell">
+                            <div class="email">januda janandith (Skype)</div>
+                            <div class="email">janudakodi (Google Talk)</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <footer>
+        <div class="w3-row-padding">
+            <div class="w3-col m6 l6">
+                <p>Copyright © Januda J Kodithuwakku 2024. All rights reserved.</p>
+            </div>
+            <div class="w3-col m6 l6 w3-display-container">
+                <ul class="menu">
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#customer-commumication">Customer Communication</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="w3-row-padding">
+            <div class="w3-col m6 l6">
+                <ul class="menu">
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Use</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    <script>
+        (function(i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function() {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-9919126-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+    <!-- Start of HubSpot Embed Code -->
+    <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/3414789.js"></script>
+    <!-- End of HubSpot Embed Code -->
 </body>
 
 </html>
